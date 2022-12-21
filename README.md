@@ -1,9 +1,11 @@
 # Notifier
 Receive notifications on your phone when your CLI tasks complete.
 
-**Syntax: < cmd > && notifier < msg >**
+**sleep 3; notifier "Sleep task completed."**
 
-<center><img src="show.jpg" width="25%"></img></center>
+**rsync -avz . philippe@my-server:"/media/philippe/"; notifier "Rsync done."**
+
+<p align="center"><img src="show.jpg" width="25%"></img></p>
 
 - Download the Alertzy app to receive the notifications on your iPhone.
 - Save the Alertzy key in your bashrc/zshrc: `export ALERTZY_KEY="blabla"`
