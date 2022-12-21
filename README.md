@@ -1,6 +1,8 @@
 # Notifier
 Receive notifications on your phone when your CLI tasks complete.
 
+**Syntax: < cmd > && notifier < msg >**
+
 - Download the Alertzy app to receive the notifications on your iPhone.
 - Save the Alertzy key in your bashrc/zshrc: `export ALERTZY_KEY="blabla"`
 
