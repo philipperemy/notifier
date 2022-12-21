@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+import os
+import sys
+from urllib import request, parse
+
+
+def post(endpoint, params):
+    data = parse.urlencode(params).encode()
+    req = request.Request(endpoint, data=data)
+    request.urlopen(req)
+
+
+def send_notification_to_iphone(alertzy_key, message, title):
+    if alertzy_key is not None:
+        api_endpoint = 'https://alertzy.app/send'
+        parameters = {'accountKey': alertzy_key, 'title': title, 'message': message}
+        try:
+            post(api_endpoint, parameters)
+        except Exception:
+            return False
+        return True
+    return False
+
+
+if __name__ == '__main__':
+    app_key = os.environ['ALERTZY_KEY']
+    send_notification_to_iphone(app_key, str(sys.argv[1]), 'Task')
